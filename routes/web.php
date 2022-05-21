@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DespesasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
+// Rotas: Cadastro e Listagem de Despesas
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/cadastros/despesas', [DespesasController::class, 'index'])->name('listar_despesas');
+Route::middleware(['auth:sanctum', 'verified'])->get('/despesas/registrar', [DespesasController::class, 'create'])->name('form_criar_despesas');
+Route::middleware(['auth:sanctum', 'verified'])->post('/despesas/registrar', [DespesasController::class, 'store']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/despesas/show/{id}', [DespesasController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

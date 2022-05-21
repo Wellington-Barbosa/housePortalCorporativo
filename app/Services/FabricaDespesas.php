@@ -9,7 +9,7 @@ class FabricaDespesas
 {
     public function criaDespesas(string $codigoDespesa, string $descricaoDespesa): C010_Despesas
     {
-        $statusDespesa = $_POST['status'];
+        $statusDespesa = $_POST['statusDespesa'];
         $dateInclusao = new \DateTime();
 
         DB::beginTransaction();

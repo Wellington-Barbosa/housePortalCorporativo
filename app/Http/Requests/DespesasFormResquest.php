@@ -24,18 +24,18 @@ class DespesasFormResquest extends FormRequest
     public function rules()
     {
         return [
-            'codigo' => 'required|min:1',
-            'descricao' => 'required|min:2',
+            'codigoDespesa' => 'required|min:1',
+            'descricaoDespesa' => 'required|min:2',
         ];
     }
 
     public function messages()
     {
         return [
-            'codigo.required' => "O campo 'CÓDIGO' é obrigatório!",
-            'codigo.min' => "O campo 'CÓDIGO' precisar ter 1 cararter",
-            'descricao.required' => "O campo 'DESCRIÇÃO' é obrigatório!",
-            'descricao.min' => "O campo 'DESCRIÇÃO' precisar ter mais do que 2 cararteres"
+            'codigoDespesa.required' => "O campo 'CÓDIGO' é obrigatório!",
+            'codigoDespesa.min' => "O campo 'CÓDIGO' precisar ter 1 cararter",
+            'descricaoDespesa.required' => "O campo 'DESCRIÇÃO' é obrigatório!",
+            'descricaoDespesa.min' => "O campo 'DESCRIÇÃO' precisar ter mais do que 2 cararteres"
         ];
     }
 }

@@ -258,8 +258,8 @@ return [
         ['header' => 'FINANCEIRO',
         ],
         [
-            'text' => 'Contas a Pagar',
-            'url'  => '/contas_a_pagar',
+            'text' => 'Despesas',
+            'url'  => '/cadastros/despesas',
             'icon' => 'fas fa-handshake',
             'label_color' => 'success',
         ],

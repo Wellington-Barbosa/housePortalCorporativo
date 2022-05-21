@@ -14,9 +14,10 @@ class CreateC010Despesas extends Migration
     public function up()
     {
         Schema::create('C010_Despesas', function (Blueprint $table) {
-            $table->integer('C010_CodigoDespesa')->autoIncrement();
+            $table->bigIncrements('id');
+            $table->string('C010_CodigoDespesa')->unique();
             $table->string('C010_DescricaoDespesa');
-            $table->string('C010_StatusDespesa');
+            $table->string('C010_StatusDespesa')->nullable();
             $table->string('C010_UsuarioInclusao')->nullable();
             $table->date('C010_DataInclusao')->nullable();
             $table->string('C010_UsuarioAlteracao')->nullable();
